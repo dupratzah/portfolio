@@ -1,0 +1,14 @@
+#welcome{
+    img{
+        height:30%;
+        width: auto;
+        position: absolute;
+        top: 20vh;
+        left: 32vw;
+        @include moove;
+    }
+    a{
+        @include fleche;
+        @include fleche_bas;
+    }
+}
