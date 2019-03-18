@@ -6,6 +6,15 @@
         top: 20vh;
         left: 32vw;
         @include moove;
+        @include medium{
+            height: 40%;
+            top: 5vh;
+            left: 55vw;
+        }
+        @include large{
+            height: 50%;
+            left: 65vw;
+        }
     }
     a{
         @include fleche;

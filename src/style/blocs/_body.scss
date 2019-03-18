@@ -1,0 +1,114 @@
+@include medium{
+    @include portrait{
+        #attention{
+            position: absolute;
+            display: inline-block;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            z-index: 100;
+            overflow-Y: hidden;
+            text-align: center;
+            p{
+                color: white;
+                font-size: 4em;            
+                transform: translateY(250%);
+            }
+        }
+    }
+}
+#attention{
+    display: none;
+}
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Lato', sans-serif;
+}
+#background{
+	background:no-repeat url("./../img/background/fond_mobile.svg");
+    background-size:cover;    
+    @include fonds;
+    @include medium{
+        background:no-repeat url("./../img/background/fond_large.svg");
+        background-size:cover;
+        @include fonds;  
+    }
+}
+#immeuble{
+    background:no-repeat url("./../img/background/immeuble_mobile.svg");
+	background-size:auto, 600vh;
+    @include fonds;
+    @include medium{
+        background:no-repeat url("./../img/background/immeuble_large.svg");
+        background-size:cover;
+        @include fonds;
+    }
+    @include large{
+        background:no-repeat url("./../img/background/immeuble_large.svg");
+        background-size:auto,600vh;
+        @include fonds;
+    }
+}
+section {
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        top: ($i - 1) * 100vh;
+        text-align:center;
+      }
+    }
+}
+section {
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        a{
+            @include fleche;
+            &.bas{
+                @include fleche_bas;
+            }
+            &.haut{
+                @include fleche_haut;
+            }  
+        }
+      }
+    }
+}
+section{
+    @for $i from 1 through 6{
+      &:nth-child(#{$i}){
+          article{
+            width: 60vw;
+            hyphens: auto;
+            position: absolute;
+            top: 15vh;
+            left: 30vw;
+            h1{
+                color:$title-color;
+                font-size: 1,8em;
+                text-transform: uppercase;
+                @include medium{
+                    font-size: 3.5em;
+                    padding-bottom: 5vh;
+                }
+                @include large{
+                    font-size: 4em;
+                }
+            }
+            p{
+                color: $secondary-color;
+                font-size: 1.2em;
+                @include medium{
+                    font-size: 2em;
+                }
+                @include large{
+                    font-size: 2.5em;
+                }
+            }
+          }
+      }
+    }
+}
+

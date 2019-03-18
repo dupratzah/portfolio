@@ -1,10 +1,7 @@
 @mixin fonds {
     height: 600vh;
 	width: 100vw;
-    margin: -1.2%;
 }
-
-
 @mixin moove {
     @keyframes bounce{
         0% {top: 20vh;}
@@ -15,8 +12,6 @@
     animation-name: bounce;
     animation-iteration-count: infinite;
 }
-
-
 @mixin fleche{
     display: inline-block;
     position: absolute;     
@@ -35,12 +30,4 @@
 @mixin fleche_haut{
     top: 6vh;
     font-size: 4vh;
-}
-
-@mixin textes{
-    width: 60vw;
-    hyphens: auto;
-    position: absolute;
-    top: 15vh;
-    left: 30vw;
 }

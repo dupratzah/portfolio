@@ -1,0 +1,21 @@
+@mixin medium {
+    @media (min-width: 700px) {
+        @content;
+    }
+  }
+@mixin large {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin portrait{
+    @media screen and (orientation: portrait) {
+        @content;
+  }
+}
+@mixin landscape{
+    @media screen and (orientation: landscape) {
+        @content;
+  }
+}
+
