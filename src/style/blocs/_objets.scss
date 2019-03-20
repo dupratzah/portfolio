@@ -1,0 +1,11 @@
+.objets{
+    position: absolute;
+    opacity: 0.5;
+    z-index: 0;
+    .objet:nth-child(1){
+        position: relative;
+        width: 50vw;
+        left: 20vh;
+        top: 80vh;
+    }
+}

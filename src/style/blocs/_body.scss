@@ -25,6 +25,7 @@ body{
     font-family: 'Lato', sans-serif;
 }
 #background{
+    z-index: -10;
 	background:no-repeat url("./../img/background/fond_mobile.svg");
     background-size:cover;    
     @include fonds;
@@ -57,6 +58,7 @@ section {
         width: 100vw;
         top: ($i - 1) * 100vh;
         text-align:center;
+        z-index: 10;
       }
     }
 }
@@ -70,6 +72,10 @@ section {
             }
             &.haut{
                 @include fleche_haut;
+            }
+            &.left{
+                @include fleche_left;
+                @include left;
             }  
         }
       }
@@ -84,16 +90,20 @@ section{
             position: absolute;
             top: 15vh;
             left: 30vw;
+            z-index: 10;
             h1{
+                font-family: 'Rock Salt', cursive;
                 color:$title-color;
-                font-size: 1,8em;
+                font-size: 1.8em;
                 text-transform: uppercase;
+                padding-bottom: 5vh;
                 @include medium{
                     font-size: 3.5em;
                     padding-bottom: 5vh;
                 }
                 @include large{
                     font-size: 4em;
+                    padding-bottom: 10vh;
                 }
             }
             p{
@@ -103,11 +113,42 @@ section{
                     font-size: 2em;
                 }
                 @include large{
-                    font-size: 2.5em;
+                    font-size: 3em;
                 }
             }
           }
       }
     }
 }
-
+.discover{
+    display: block;
+    position: relative;
+    margin-top: 20vh;
+    @include moove(20%,2s);
+    @include large{
+        margin-top: 15vh;
+    }
+    strong{
+        color: white;
+        font-size: 1.2em;
+        font-family: 'Permanent Marker', cursive;
+        @include medium{
+            font-size: 1.8em;
+        }
+        @include large {
+            font-size: 3em;
+        }
+    }
+    img{
+        position: absolute;
+        top: -12vh;
+        left: 5vw;
+        height:10vh;
+        @include large{
+            transform: scaleX(-1) rotateZ(-230deg);
+            height: 20vh;
+            top: 0vh;
+            left:15vw;
+        }
+    }
+}

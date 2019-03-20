@@ -6,72 +6,95 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" href="style/style.scss">
+    <link rel="icon" href="./img/favicon.ico" />
+    <script defer type="text/javascript" src="./js/javascript.js"></script>
     <title>Portfolio</title>
 </head>
 <body>
-<div id="attention">
-    <p>Veuillez tourner votre écran</p>
-</div>
+
+    <!-- DIVERS-->
+    <div id="attention">
+        <p>Veuillez tourner votre écran</p>
+    </div>
+    <!--
+        <div class="objets">
+            <div class="objet" data-rellax-speed="-6"><img src="./img/sun.svg" alt="sun"></div>
+        </div>
+    -->
+    <!--FOND-->
     <div id="background">
         <div id="immeuble">
+
         <!--SECTION ACCUEIL -->
             <section id="welcome">
                 <img src="./img/titre.svg" alt="Portfolio DUPRAT Hugo">
                 <a href="#presentation" class="bas"><i class="fas fa-angle-down"></i></a>
             </section>
 
-
             <section id="presentation">
                 <a href="#welcome" class="haut"><i class="fas fa-angle-up"></i></a>
-                <article class="textes">
+                <article class="textes" id="press">
                         <h1>Salut !</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat rerum laudantium quod dolorum itaque, reiciendis hic est maiores voluptate culpa, quam, facere ea voluptatum! Voluptate repudiandae quasi inventore iste sint.</p>
+                        
                 </article>
                 <a href="#multi" class="bas"><i class="fas fa-angle-down"></i></a>
             </section>
 
-
             <section id="multi">
                 <a href="#presentation" class="haut"><i class="fas fa-angle-up"></i></a>
-                <article class="textes">
+                <article class="textes" id="multis">
                         <h1>Multimédia</h1>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta reiciendis hic odit ipsa commodi totam provident exercitationem saepe quia modi veniam repudiandae, corrupti iure enim! Voluptates mollitia expedita iure.</p>
-                </article>
+                        <span class="discover">
+                            <strong>Découvre mes compétences en Multimédia !</strong>
+                            <img src="./img/arrow.png" alt="arrow">
+                        </span>
+                </article>                
+                <a href="./multimedia.html" class="left"><i class="fas fa-info-circle"></i></a>
                 <a href="#dev" class="bas"><i class="fas fa-angle-down"></i></a>
-            </section>
 
+            </section>
 
             <section id="dev">
                 <a href="#multi" class="haut"><i class="fas fa-angle-up"></i></a>
-                <article class="textes">
+                <article class="textes" id="devs">
                         <h1>Web</h1>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi a quo cum omnis vitae totam temporibus quia enim assumenda sit. Autem ut voluptate quia debitis? Impedit voluptate architecto consequatur enim.</p>
+                        <span class="discover">
+                                <strong>Ce que je sais faire en Développement !</strong>
+                                <img src="./img/arrow.png" alt="arrow">
+                        </span>
                 </article>
+                <a href="./multimedia.html" class="left"><i class="fas fa-info-circle"></i></a>                
                 <a href="#mus" class="bas"><i class="fas fa-angle-down"></i></a>
             </section>
 
-
             <section id="mus">
                 <a href="#dev" class="haut"><i class="fas fa-angle-up"></i></a>
-                <article class="textes">
+                <article class="textes" id="muss">
                         <h1>Musique</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel quo a consequuntur numquam excepturi soluta provident sapiente nemo. Eaque quisquam numquam ratione molestias aliquid eveniet saepe non, illo ea dolor!</p>
+                        <span class="discover">
+                                <strong>Découvre mon profil de Musicien !</strong>
+                                <img src="./img/arrow.png" alt="arrow">
+                        </span>
                 </article>
+                <a href="./multimedia.html" class="left"><i class="fas fa-info-circle"></i></a> 
                 <a href="#contact" class="bas"><i class="fas fa-angle-down"></i></a>
             </section>	
 
-
             <section id="contact">
                 <a href="#mus" class="haut"><i class="fas fa-angle-up"></i></a>
-                <article class="textes">
-                        <h1>Contactez-moi !</h1>
+                <article class="textes" id="contacts">
+                        <h1>Contacts</h1>
                 </article>
                 <a href="#welcome" class="bas"><i class="fas fa-home"></i></a>
             </section>
 
-            </div>
+        </div>
     </div>
 </body>
 </html>

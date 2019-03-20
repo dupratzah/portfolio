@@ -2,14 +2,25 @@
     height: 600vh;
 	width: 100vw;
 }
-@mixin moove {
+@mixin moove($max:10%,$temps:6s) {
     @keyframes bounce{
-        0% {top: 20vh;}
-        50% {top: 18vh;}
-        100% {top: 20vh;}
+        0% {transform: translateY(0%)}
+        50% {transform: translateY($max)}
+        100% {transform: translateY(0%)}
+    }
+    animation-duration: $temps;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+}
+@mixin left {
+    @keyframes mooves{
+        0% {transform: translateY(0%);}
+        10% {transform: translateY(-50%);}
+        20% {transform: translateY(0%);}
+        100% {transform: translateY(0%);}
     }
     animation-duration: 3s;
-    animation-name: bounce;
+    animation-name: mooves;
     animation-iteration-count: infinite;
 }
 @mixin fleche{
@@ -19,7 +30,7 @@
     transform: translateX(-35%); 
     &:hover{
         color: grey;
-    }    
+    }   
     z-index: 10;
 }
 @mixin fleche_bas{
@@ -30,4 +41,17 @@
 @mixin fleche_haut{
     top: 6vh;
     font-size: 4vh;
+}
+@mixin fleche_left{
+    top: 48vh;
+    left: 7vw;
+    font-size: 4vh;
+    color: $title-color;
+    &:hover{
+        color:$blue;
+    }  
+    @include medium{
+        font-size: 8vh;
+        top: 45vh;
+    }
 }
