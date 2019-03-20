@@ -37,7 +37,7 @@ body{
 }
 #immeuble{
     background:no-repeat url("./../img/background/immeuble_mobile.svg");
-	background-size:auto, 600vh;
+	background-size:cover;
     @include fonds;
     @include medium{
         background:no-repeat url("./../img/background/immeuble_large.svg");
@@ -46,7 +46,7 @@ body{
     }
     @include large{
         background:no-repeat url("./../img/background/immeuble_large.svg");
-        background-size:auto,600vh;
+        background-size:auto, 600vh;
         @include fonds;
     }
 }
@@ -109,6 +109,7 @@ section{
             p{
                 color: $secondary-color;
                 font-size: 4.5vw;
+                text-align: justify;
                 @include medium{
                     font-size: 2.5vw;
                 }

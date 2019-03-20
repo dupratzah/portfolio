@@ -3,7 +3,13 @@
         @include fleche;
         &.bas{
             bottom: 1.5vh;    
-            font-size: 4vh; 
+            font-size: 5vh; 
+            @include medium{
+                font-size: 6vh;
+            }
+            @include large{
+                font-size: 8vh;
+            }
         }
         &.haut{
             @include fleche_haut;
