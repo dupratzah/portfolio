@@ -94,26 +94,26 @@ section{
             h1{
                 font-family: 'Rock Salt', cursive;
                 color:$title-color;
-                font-size: 1.8em;
+                font-size: 8vw;
                 text-transform: uppercase;
-                padding-bottom: 5vh;
+                padding-bottom: 3vh;
                 @include medium{
-                    font-size: 3.5em;
-                    padding-bottom: 5vh;
+                    font-size: 5vw;
+                    padding-bottom: 8vh;
                 }
                 @include large{
-                    font-size: 4em;
-                    padding-bottom: 10vh;
+                    font-size: 3vw;
+                    padding-bottom: 6vh;
                 }
             }
             p{
                 color: $secondary-color;
-                font-size: 1.2em;
+                font-size: 4.5vw;
                 @include medium{
-                    font-size: 2em;
+                    font-size: 2.5vw;
                 }
                 @include large{
-                    font-size: 3em;
+                    font-size: 1.8vw;
                 }
             }
           }
@@ -123,20 +123,23 @@ section{
 .discover{
     display: block;
     position: relative;
-    margin-top: 20vh;
+    margin-top: 13vh;
     @include moove(20%,2s);
+    @include medium{
+        margin-top: 12vh;
+    }
     @include large{
         margin-top: 15vh;
     }
     strong{
         color: white;
-        font-size: 1.2em;
+        font-size: 6vw;
         font-family: 'Permanent Marker', cursive;
         @include medium{
-            font-size: 1.8em;
+            font-size: 4vw;
         }
         @include large {
-            font-size: 3em;
+            font-size: 2.5vw;
         }
     }
     img{
@@ -147,8 +150,8 @@ section{
         @include large{
             transform: scaleX(-1) rotateZ(-230deg);
             height: 20vh;
-            top: 0vh;
-            left:15vw;
+            top: 2vh;
+            left:11vw;
         }
     }
 }

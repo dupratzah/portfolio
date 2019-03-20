@@ -5,7 +5,7 @@
         position: absolute;
         top: 20vh;
         left: 32vw;
-        @include moove;
+        @include moove(15%, 6s);
         @include medium{
             height: 40%;
             top: 5vh;
