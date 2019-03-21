@@ -1,6 +1,7 @@
+
 .objet:nth-child(1){   
     position: absolute;
-    opacity: 0.40;
+    opacity: 0.30;
     z-index: 0;
     left: 25vh;
     top: 160vh;
@@ -18,58 +19,62 @@
 }
 .objet:nth-child(2){   
     position: absolute;
-    opacity: 0.40;
+    opacity: 0.80;
     z-index: 0;
-    left: 25vh;
-    top: 160vh;
-    width: 50vw;
+    top: 260vh;
+    width: 100vw;
 }
 .objet:nth-child(3){   
     position: absolute;
-    opacity: 0.40;
+    opacity: 0.80;
     z-index: 0;
-    left: 25vh;
-    top: 160vh;
-    width: 50vw;
+    top: 420vh;
+    width: 100vw;
 }
 .objet:nth-child(4){   
     position: absolute;
-    opacity: 0.40;
+    opacity: 0.70;
     z-index: 0;
-    left: 25vh;
-    top: 160vh;
-    width: 50vw;
+    top: 120vh;
+    width: 100vw;
 }
 .objet:nth-child(5){   
     position: absolute;
-    opacity: 0.40;
+    opacity: 0.80;
     z-index: 0;
-    top: 2000vh;
+    top: 110vh;
     width: 100vw;
-    @include large{
-        top: 180vh;
-        left: 90vh;
-        width: 30vw;
-    }
+
 }
 .objet:nth-child(6){   
     position: absolute;
-    opacity: 0.40;
-    z-index: 0;
-    top: 220vh;
-    width: 100vw;
-    @include large{
-        top: 180vh;
-        left: 90vh;
-        width: 30vw;
+    opacity: 0.70;
+    z-index: 10;
+    left: 16vh;
+    top: 40vh;
+    width: 25vw;
+    @include medium{
+        @include landscape{
+            left: 25vw;
+        }
     }
 }
 .objet:nth-child(7){   
     position: absolute;
-    opacity: 0.40;
-    z-index: 0;
-    left: 15vh;
-    top: 140vh;
-    width: 25vw;
+    z-index: -15;
+    bottom: 0vh;
+    width: 100vw;
+    height: auto;
+}
+.objet:nth-child(8){   
+    position: absolute;
+    z-index: -20;
+    bottom: -55vh;
+    width: 100vw;
+    opacity: 0.8;
+    @include large{
+        bottom: -40vh;
+    }
+
 }
 

@@ -35,12 +35,12 @@
 @mixin fleche_bas{
     bottom: 1.5vh;    
     font-size: 8vh;  
-    z-index: 40;
+    z-index: 100;
 }
 @mixin fleche_haut{
     top: 6vh;
     font-size: 4vh;
-    z-index: 40;
+    z-index: 100;
 }
 @mixin fleche_left{
     top: 48vh;
@@ -51,9 +51,9 @@
         color:$blue;
     }  
     @include medium{
-        font-size: 8vh;
-        top: 45vh;
-        left: 0vw;
+        font-size: 5vh;
+        top: 49vh;
+        left: 5vw;
         @include landscape{
             left: 7vw;
         }

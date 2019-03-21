@@ -4,7 +4,7 @@
         width: auto;
         position: absolute;
         top: 10vh;
-        left: 25vw;
+        left: 30vw;
         @include moove(15%, 6s);
         @include medium{
             height: 40vh;

@@ -70,9 +70,19 @@ section {
         &.left{
             @include fleche_left;
             @include left;
+        }
+        &.home{
+            bottom: 6vh;    
+            font-size: 4vh;  
+            z-index: 100;
+            @include large{
+                font-size: 8vh;
+                bottom: 8vh;
+            }
         }  
     }
 }
+
 article{
 width: 55vw;
 hyphens: auto;
