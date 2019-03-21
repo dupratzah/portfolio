@@ -56,31 +56,36 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translatex(4vh);
+
 }
 section {
-    @for $i from 1 through 7 {
-      &:nth-child(#{$i}) {
-        a{
-            @include fleche;
-            &.bas{
-                @include fleche_bas;
-            }
-            &.haut{
-                @include fleche_haut;
-            }
-            &.left{
-                @include fleche_left;
-                @include left;
-            }  
+    a{
+        @include fleche;
+        &.bas{
+            @include fleche_bas;
         }
-      }
+        &.haut{
+            @include fleche_haut;
+        }
+        &.left{
+            @include fleche_left;
+            @include left;
+        }  
     }
 }
 article{
 width: 55vw;
 hyphens: auto;
 z-index: 10;
+transform: translatex(6vh);
+@include medium{
+    @include landscape{
+        transform: translateX(12vh);
+    }
+}
+@include large{
+    transform: translatex(12vh);
+}
 h1{
     font-family: 'Rock Salt', cursive;
     color:$title-color;
