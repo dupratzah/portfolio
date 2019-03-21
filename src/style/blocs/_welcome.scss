@@ -1,18 +1,21 @@
 #welcome{
     img{
-        height:30%;
+        height:30vh;
         width: auto;
         position: absolute;
-        top: 20vh;
-        left: 32vw;
+        top: 10vh;
+        left: 25vw;
         @include moove(15%, 6s);
         @include medium{
-            height: 40%;
+            height: 40vh;
             top: 5vh;
-            left: 55vw;
+            left: 30vw;
+            @include landscape{
+                left: 60vw;
+            }
         }
         @include large{
-            height: 50%;
+            height: 50vh;
             left: 65vw;
         }
     }

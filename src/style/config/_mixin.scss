@@ -53,7 +53,10 @@
     @include medium{
         font-size: 8vh;
         top: 45vh;
-        left: 10vw;
+        left: 0vw;
+        @include landscape{
+            left: 7vw;
+        }
     }
     @include large{
         font-size: 10vh;

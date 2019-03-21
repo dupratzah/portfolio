@@ -1,11 +1,13 @@
-.objets{
+.objet:nth-child(1){   
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.40;
     z-index: 0;
-    .objet:nth-child(1){
-        position: relative;
-        width: 50vw;
-        left: 20vh;
-        top: 80vh;
+    left: 25vh;
+    top: 160vh;
+    width: 50vw;
+    @include large{
+        top: 180vh;
+        left: 90vh;
+        width: 30vw;
     }
 }

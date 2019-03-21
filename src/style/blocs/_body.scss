@@ -1,3 +1,7 @@
+#attention{
+    display: none;
+}
+/*
 @include medium{
     @include portrait{
         #attention{
@@ -7,7 +11,6 @@
             height: 100vh;
             background-color: black;
             z-index: 100;
-            overflow-Y: hidden;
             text-align: center;
             p{
                 color: white;
@@ -16,54 +19,47 @@
             }
         }
     }
-}
-#attention{
-    display: none;
-}
+}*/
 body{
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
-}
-#background{
-    z-index: -10;
-	background:no-repeat url("./../img/background/fond_mobile.svg");
-    background-size:cover;    
+    background:linear-gradient(#3C669B, #14002A);
     @include fonds;
-    @include medium{
-        background:no-repeat url("./../img/background/fond_large.svg");
-        background-size:cover;
-        @include fonds;  
-    }
+    position: relative;
 }
 #immeuble{
     background:no-repeat url("./../img/background/immeuble_mobile.svg");
-	background-size:cover;
+    background-size:cover;
+    position: absolute;
+    z-index: 10;
     @include fonds;
     @include medium{
-        background:no-repeat url("./../img/background/immeuble_large.svg");
-        background-size:cover;
-        @include fonds;
+        @include portrait{
+            background:no-repeat url("./../img/background/immeuble_mobile.svg");
+        }
+        @include landscape{
+            background:no-repeat url("./../img/background/immeuble_large.svg");
+            background-size:cover;
+        }
     }
     @include large{
         background:no-repeat url("./../img/background/immeuble_large.svg");
         background-size:auto, 600vh;
-        @include fonds;
     }
 }
 section {
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) {
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        top: ($i - 1) * 100vh;
-        text-align:center;
-        z-index: 10;
-      }
-    }
+    height: 100vh;
+    width: 100vw;
+    text-align:center;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translatex(4vh);
 }
 section {
-    @for $i from 1 through 5 {
+    @for $i from 1 through 7 {
       &:nth-child(#{$i}) {
         a{
             @include fleche;
@@ -81,44 +77,53 @@ section {
       }
     }
 }
-section{
-    @for $i from 1 through 6{
-      &:nth-child(#{$i}){
-          article{
-            width: 60vw;
-            hyphens: auto;
-            position: absolute;
-            top: 15vh;
-            left: 30vw;
-            z-index: 10;
-            h1{
-                font-family: 'Rock Salt', cursive;
-                color:$title-color;
-                font-size: 8vw;
-                text-transform: uppercase;
-                padding-bottom: 3vh;
-                @include medium{
-                    font-size: 5vw;
-                    padding-bottom: 8vh;
-                }
-                @include large{
-                    font-size: 3vw;
-                    padding-bottom: 6vh;
-                }
-            }
-            p{
-                color: $secondary-color;
-                font-size: 4.5vw;
-                text-align: justify;
-                @include medium{
-                    font-size: 2.5vw;
-                }
-                @include large{
-                    font-size: 1.8vw;
-                }
-            }
-          }
-      }
+article{
+width: 55vw;
+hyphens: auto;
+z-index: 10;
+h1{
+    font-family: 'Rock Salt', cursive;
+    color:$title-color;
+    font-size: 8vw;
+    text-transform: uppercase;
+    padding-bottom: 3vh;
+    transform: translateY(50px) scale(0.5);
+    opacity: 0;
+    transition: 0.5s;
+    @include medium{
+        font-size: 5vw;
+        padding-bottom: 8vh;
+    }
+    @include large{
+        font-size: 3vw;
+        padding-bottom: 6vh;
+    }
+}
+p{
+    color: $secondary-color;
+    transform: translateY(50px) scale(0.5);
+    opacity: 0;
+    transition: 1s;
+    font-size: 4.5vw;
+    text-align: justify;
+    @include medium{
+        font-size: 2.5vw;
+    }
+    @include large{
+        font-size: 1.8vw;
+    }
+}
+}
+.section--reached{
+    article{
+        h1{
+            opacity: 1;
+            transform: none;
+        }
+        p{
+            opacity: 1;
+            transform: none;
+        }
     }
 }
 .discover{
