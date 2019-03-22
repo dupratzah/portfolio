@@ -33,13 +33,8 @@
     z-index: 10;
 }
 @mixin fleche_bas{
-    bottom: 1.5vh;    
+    bottom: 3vh;    
     font-size: 8vh;  
-    z-index: 100;
-}
-@mixin fleche_haut{
-    top: 6vh;
-    font-size: 4vh;
     z-index: 100;
 }
 @mixin fleche_left{

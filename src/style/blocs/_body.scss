@@ -1,36 +1,15 @@
-#attention{
-    display: none;
-}
-/*
-@include medium{
-    @include portrait{
-        #attention{
-            position: absolute;
-            display: inline-block;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            z-index: 100;
-            text-align: center;
-            p{
-                color: white;
-                font-size: 4em;            
-                transform: translateY(250%);
-            }
-        }
-    }
-}*/
+
 body{
-    overflow-x: hidden;
     font-family: 'Lato', sans-serif;
-    background:linear-gradient(#3C669B, #14002A);
-    @include fonds;
+    background: -moz-linear-gradient(#3C669B, #14002A);
+    background: -webkit-linear-gradient(#3C669B, #14002A);
+    background: linear-gradient(#3C669B, #14002A);
     position: relative;
+    width: 100vw;
 }
 #immeuble{
     background:no-repeat url("./../img/background/immeuble_mobile.svg");
     background-size:cover;
-    position: absolute;
     z-index: 10;
     @include fonds;
     @include medium{
@@ -64,9 +43,6 @@ section {
         &.bas{
             @include fleche_bas;
         }
-        &.haut{
-            @include fleche_haut;
-        }
         &.left{
             @include fleche_left;
             @include left;
@@ -82,19 +58,19 @@ section {
         }  
     }
 }
-
 article{
 width: 55vw;
 hyphens: auto;
 z-index: 10;
-transform: translatex(6vh);
+transform: translate(6vh, -4vh);
 @include medium{
     @include landscape{
-        transform: translateX(12vh);
+        transform: translate(10vw, -3vh);
     }
 }
 @include large{
-    transform: translatex(12vh);
+    transform: translate(10vw, -7vh);
+    
 }
 h1{
     font-family: 'Rock Salt', cursive;
@@ -150,7 +126,7 @@ p{
         margin-top: 12vh;
     }
     @include large{
-        margin-top: 15vh;
+        margin-top: 6vh;
     }
     strong{
         color: white;
