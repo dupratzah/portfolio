@@ -38,24 +38,19 @@ section {
 
 }
 section {
-    a{
-        @include fleche;
-        &.bas{
-            @include fleche_bas;
-        }
-        &.left{
-            @include fleche_left;
-            @include left;
-        }
-        &.home{
-            bottom: 6vh;    
-            font-size: 4vh;  
-            z-index: 100;
-            @include large{
-                font-size: 8vh;
-                bottom: 8vh;
+    @for $i from 1 to 6 {
+        &:nth-child(#{$i}){
+            a{
+                @include fleche;
+                &.bas{
+                    @include fleche_bas;
+                }
+                &.left{
+                    @include fleche_left;
+                    @include left;
+                }
             }
-        }  
+        }
     }
 }
 article{
@@ -72,7 +67,7 @@ transform: translate(6vh, -4vh);
     transform: translate(10vw, -7vh);
     
 }
-h1{
+h2{
     font-family: 'Rock Salt', cursive;
     color:$title-color;
     font-size: 8vw;
@@ -107,7 +102,7 @@ p{
 }
 .section--reached{
     article{
-        h1{
+        h2{
             opacity: 1;
             transform: none;
         }
