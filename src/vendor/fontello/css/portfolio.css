@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'portfolio';
-  src: url('../font/portfolio.eot?42594557');
-  src: url('../font/portfolio.eot?42594557#iefix') format('embedded-opentype'),
-       url('../font/portfolio.woff2?42594557') format('woff2'),
-       url('../font/portfolio.woff?42594557') format('woff'),
-       url('../font/portfolio.ttf?42594557') format('truetype'),
-       url('../font/portfolio.svg?42594557#portfolio') format('svg');
+  src: url('../font/portfolio.eot?69589353');
+  src: url('../font/portfolio.eot?69589353#iefix') format('embedded-opentype'),
+       url('../font/portfolio.woff2?69589353') format('woff2'),
+       url('../font/portfolio.woff?69589353') format('woff'),
+       url('../font/portfolio.ttf?69589353') format('truetype'),
+       url('../font/portfolio.svg?69589353#portfolio') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'portfolio';
-    src: url('../font/portfolio.svg?42594557#portfolio') format('svg');
+    src: url('../font/portfolio.svg?69589353#portfolio') format('svg');
   }
 }
 */
@@ -69,6 +69,7 @@
 .icon-drum-solid:before { content: '\e80b'; } /* '' */
 .icon-guitar-solid:before { content: '\e80c'; } /* '' */
 .icon-piano-keyboard-keys-silhouette:before { content: '\e80d'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
 .icon-mail-alt:before { content: '\f0e0'; } /* '' */
 .icon-html5:before { content: '\f13b'; } /* '' */
 .icon-css3:before { content: '\f13c'; } /* '' */
