@@ -36,3 +36,60 @@ var scroll = new SmoothScroll('a[href*="#"]', {
  
 });
 
+
+
+/** FONCTIONNALITES */
+//GROSSIR OU RETRECIR LA POLICE
+
+ if(typeof localStorage!=='undefined'){
+    var taillePolice = localStorage.getItem('taille');
+    if(taillePolice!==null){
+      taillePolice = parseInt(taillePolice);
+    }
+    else{
+      taillePolice = 16;
+    }
+    localStorage.setItem('taille',taillePolice);
+    var baliseHTML = document.getElementsByTagName('html');
+    baliseHTML[0].style = 'font-size:'+ taillePolice + 'px;';
+  }
+  else{
+    alert("localStorage n\'est pas supporté");
+  }
+  
+  document.getElementById('plus').addEventListener("click",function(){
+    taillePolice = localStorage.getItem('taille');
+    if(taillePolice <= 32){
+      taillePolice = parseInt(taillePolice) + 2;
+      localStorage.setItem('taille',taillePolice);
+      var baliseH1 = document.getElementsByTagName('html');
+      for (var i = baliseH1.length - 1; i >= 0; i--) {
+        baliseH1[i].style = 'font-size:' + taillePolice + 'px;';
+      }
+      console.log(taillePolice);
+    }
+    else{
+      alert('Vous avez atteint la taille maximale');
+    }
+  });
+  
+  document.getElementById('moins').addEventListener("click",function(){
+    taillePolice = localStorage.getItem('taille');
+    if(taillePolice >= 10){
+      taillePolice = parseInt(taillePolice) - 2;
+      localStorage.setItem('taille',taillePolice);
+      var baliseH1 = document.getElementsByTagName('html');
+      for (var i = baliseH1.length - 1; i >= 0; i--) {
+        baliseH1[i].style = 'font-size:' + taillePolice + 'px;';
+      }
+      console.log(taillePolice);
+    }
+    else{
+      alert('Vous avez la taille minimale');
+    }
+  });
+
+  /**Dyslexie */
+//DYSLEXIE
+
+

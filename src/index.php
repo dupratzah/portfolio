@@ -1,10 +1,33 @@
+<?php
+session_start();
+// lire le paramètre de langue
+if ( isset( $_GET[ 'lang'] )) {
+  $lang = $_GET[ 'lang'];
+  // contrôler!
+  if ( !in_array( $lang, [ 'fr', 'en'])  ) {
+    $lang = 'fr';
+  }
+  $_SESSION[ 'lang' ] = $lang;
+} else if ( isset( $_SESSION[ 'lang' ] )) {
+  $lang = $_SESSION[ 'lang' ];
+} else {
+  // langue par défaut
+  $lang = 'fr';
+  $_SESSION[ 'lang' ] = $lang;
+}
+  // ouvrir le fichier de langue
+  $json = file_get_contents( 'lang/' . $lang . '.json' );
+  $trans = json_decode( $json, true );
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DUPRAT Hugo | Portfolio</title>
+    <title><?php echo $trans[ 'index_title' ]?></title>
+    <meta name="google-site-verification" content="_YVRNl_krwDPMCv_6gT7J88_8aD5tZvIEuX8XN-uPXw" />
     <meta name="description" content="Bonjour à tous je m'appelle Hugo DUPRAT, je suis actuellement étudiant en deuxième année de MMI à Angoulême, une formation pluridisciplinaire dans le domaine du multimédia, du web et de la communication. Pour présenter un panel de mes compétences, j'ai choisi de créer ce portfolio. Venez donc visiter mon univers et mes créations ! " />
     <meta name="author" content="DUPRAT Hugo"/>
     <meta property="og:title" content="DUPRAT Hugo | Portfolio"/>
@@ -27,25 +50,12 @@
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" href="style/style.scss">
     <link rel="icon" href="./img/favicon.ico" />
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="./js/javascript.js"></script>
-    <script defer src="./js/menu.js"></script>
+    <script defer type="text/javascript" src="./js/javascript.js"></script>
     
 </head>
 <body>
 <!--<body oncontextmenu="return false" ondragstart="return false" onmouseover="window.status='Il est strictement interdit de copier les images sur ce site'; return true;">-->
 
-<div class="burger">
-    <i></i><i></i><i></i>
-</div>
-<div id="menu" style="display:none">
-    <ul class="elements">
-        <li><button id="plus">A+</button></li>
-        <li><button id="moins">A-</button></li>
-        <li><button id="lang">Fr</button></li>
-        <li><button id="dys">Dys</button></li>
-    </ul>
-</div>
 
   <div class="objets">
         <div class="objet" data-rellax-speed="-4"><img src="./img/sun.svg" alt="sun"></div>
@@ -67,8 +77,8 @@
 
             <section id="presentation">
                 <article class="textes" id="press">
-                        <h2>Hello !</h2>
-                        <p></p>
+                        <h2><?php echo $trans[ 'presentation_h2' ]?></h2>
+                        <p><?php echo $trans[ 'presentation_p' ]?></p>
                         
                 </article>
                 <a href="#multi" class="bas"><i class="demo-icon icon-down-open">&#xe800;</i></a>
@@ -76,10 +86,10 @@
 
             <section id="multi">
                 <article class="textes" id="multis">
-                        <h2>Multimédia</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta reiciendis hic odit ipsa commodi totam provident exercitationem saepe quia modi veniam repudiandae, corrupti iure enim! Voluptates mollitia expedita iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat rerum laudantium quod dolorum itaque, reiciendis hic est maiores voluptate culpa, quam, facere ea voluptatum! Voluptate repudiandae quasi inventore iste sint.</p>
+                        <h2><?php echo $trans[ 'multimedia_h2' ]?></h2>
+                        <p><?php echo $trans[ 'multimedia_p' ]?></p>
                         <span class="discover">
-                            <strong>Découvre mes compétences en Multimédia !</strong>
+                            <strong><?php echo $trans[ 'multimedia_strong' ]?></strong>
                             <img src="./img/arrow.png" alt="arrow">
                         </span>
                 </article>                
@@ -90,10 +100,10 @@
 
             <section id="dev">
                 <article class="textes" id="devs">
-                        <h2>Web</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi a quo cum omnis vitae totam temporibus quia enim assumenda sit. Autem ut voluptate quia debitis? Impedit voluptate architecto consequatur enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat rerum laudantium quod dolorum itaque, reiciendis hic est maiores voluptate culpa, quam, facere ea voluptatum! Voluptate repudiandae quasi inventore iste sint.</p>
+                        <h2><?php echo $trans[ 'web_h2' ]?></h2>
+                        <p><?php echo $trans[ 'web_p' ]?></p>
                         <span class="discover">
-                                <strong>Ce que je sais faire en Développement !</strong>
+                                <strong><?php echo $trans[ 'web_strong' ]?></strong>
                                 <img src="./img/arrow.png" alt="arrow">
                         </span>
                 </article>
@@ -103,10 +113,10 @@
 
             <section id="mus">
                 <article class="textes" id="muss">
-                        <h2>Musique</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel quo a consequuntur numquam excepturi soluta provident sapiente nemo. Eaque quisquam numquam ratione molestias aliquid eveniet saepe non, illo ea dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat rerum laudantium quod dolorum itaque, reiciendis hic est maiores voluptate culpa, quam, facere ea voluptatum! Voluptate repudiandae quasi inventore iste sint.</p>
+                        <h2><?php echo $trans[ 'musique_h2' ]?></h2>
+                        <p><?php echo $trans[ 'musique_p' ]?></p>
                         <span class="discover">
-                                <strong>Découvre mon profil de Musicien !</strong>
+                                <strong><?php echo $trans[ 'musique_strong' ]?></strong>
                                 <img src="./img/arrow.png" alt="arrow">
                         </span>
                 </article>
@@ -116,9 +126,9 @@
 
             <section id="contact">
                 <article class="contacts">
-                        <h2>Contact</h2>
+                        <h2><?php echo $trans[ 'contact_h2' ]?></h2>
                         <div class="contact">
-                            <h3>Écrivez-moi :</h3>
+                            <h3><?php echo $trans[ 'contact_h3_1' ]?></h3>
                             <div class="contact__line">
                                 <div>
                                     <a href="mailto:hugo.duprat@laposte.net"  rel="nofollow" title="Mon e-mail"><i class="demo-icon icon-mail-alt">&#xf0e0;</i></a>
@@ -127,7 +137,7 @@
                                     <a href="https://www.linkedin.com/in/hugo-duprat-088a14171/"  rel="nofollow"><i class="demo-icon icon-linkedin-squared" title="Ma page linkedin">&#xf30c;</i></a>
                                 </div>
                             </div>
-                            <h3>D'autres créations :</h3>
+                            <h3><?php echo $trans[ 'contact_h3_2' ]?></h3>
                             <div class="contact__line">
                                 <div>
                                     <a href="https://www.instagram.com/dugodup/"  rel="nofollow" title="Mon compte instagram"><i class="demo-icon icon-instagram">&#xf16d;</i></a>
@@ -146,8 +156,8 @@
     </div>
 
     <footer>
-        <p>DUPRAT Hugo © - 2019 - Tous droits réservés</p>
-        <a href="./mentions_legales.html" title="mentions légales">Mentions légales</a>
+        <p><?php echo $trans[ 'footer_p' ]?></p>
+        <a href="./mentions_legales.html" title="mentions légales"><?php echo $trans[ 'footer_a' ]?></a>
     </footer>
 </body>
 </html>
