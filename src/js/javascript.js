@@ -39,6 +39,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
 
 /** FONCTIONNALITES */
+
 //GROSSIR OU RETRECIR LA POLICE
 
  if(typeof localStorage!=='undefined'){
@@ -62,11 +63,22 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     if(taillePolice <= 32){
       taillePolice = parseInt(taillePolice) + 2;
       localStorage.setItem('taille',taillePolice);
-      var baliseH1 = document.getElementsByTagName('html');
+      var baliseH1 = document.getElementsByTagName('h1');
       for (var i = baliseH1.length - 1; i >= 0; i--) {
         baliseH1[i].style = 'font-size:' + taillePolice + 'px;';
       }
-      console.log(taillePolice);
+      var baliseH2 = document.getElementsByTagName('h2');
+      for (var i = baliseH2.length - 1; i >= 0; i--) {
+        baliseH2[i].style = 'font-size:' + taillePolice + 'px;';
+      }
+      var baliseH3 = document.getElementsByTagName('h3');
+      for (var i = baliseH3.length - 1; i >= 0; i--) {
+        baliseH3[i].style = 'font-size:' + taillePolice + 'px;';
+      }
+      var balisep = document.getElementsByTagName('p');
+      for (var i = balisep.length - 1; i >= 0; i--) {
+        balisep[i].style = 'font-size:' + taillePolice + 'px;';
+      }
     }
     else{
       alert('Vous avez atteint la taille maximale');
@@ -78,18 +90,33 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     if(taillePolice >= 10){
       taillePolice = parseInt(taillePolice) - 2;
       localStorage.setItem('taille',taillePolice);
-      var baliseH1 = document.getElementsByTagName('html');
+      var baliseH1 = document.getElementsByTagName('h1');
       for (var i = baliseH1.length - 1; i >= 0; i--) {
         baliseH1[i].style = 'font-size:' + taillePolice + 'px;';
       }
-      console.log(taillePolice);
+      var baliseH2 = document.getElementsByTagName('h2');
+      for (var i = baliseH2.length - 1; i >= 0; i--) {
+        baliseH2[i].style = 'font-size:' + taillePolice + 'px;';
+      }
+      var baliseH3 = document.getElementsByTagName('h3');
+      for (var i = baliseH3.length - 1; i >= 0; i--) {
+        baliseH3[i].style = 'font-size:' + taillePolice + 'px;';
+      }
+      var balisep = document.getElementsByTagName('p');
+      for (var i = balisep.length - 1; i >= 0; i--) {
+        balisep[i].style = 'font-size:' + taillePolice + 'px;';
+      }
     }
     else{
-      alert('Vous avez la taille minimale');
+      alert('Vous avez atteint la taille minimale');
     }
   });
 
-  /**Dyslexie */
-//DYSLEXIE
+  //DYSLEXIE 
 
-
+document.getElementById('dys').addEventListener("click",function(){
+    var p = document.getElementsByTagName('body');
+    for (var i = p.length - 1; i >= 0; i--) {
+        p[i].classList.toggle("dyslexie");
+    }
+});

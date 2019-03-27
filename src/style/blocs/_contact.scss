@@ -56,13 +56,13 @@
         height:25px;
         width:25px;
         margin:10px;
-        font-size: 3em;
+        font-size: 1em;
         color:white;
         @include medium{
-            font-size: 4em;
+            font-size: 3em;
         }
         @include large{
-            font-size: 6em;
+            font-size: 3em;
         }
         i{
             transition-property: opacity, transform;

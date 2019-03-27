@@ -6,6 +6,18 @@
   position: fixed;
   left:20px;
   top:25px;
+  @include medium{
+    left:20px;
+    top:25px;
+    @include landscape{
+        left:20px;
+        top:25px;
+    }
+  }
+  @include large{
+    left:20px;
+    top:25px;
+  }
   i{
     background-color: white;
     border-radius: 4px;
@@ -171,11 +183,24 @@
     transition-delay: 2s;
     position: fixed;
     top: 55px; 
-    left: 10px;
+    left: 20px;
     display: flex; 
     flex-direction: column;  
     align-items: center;
     z-index: 2000;
+    @include medium{
+        left:20px;
+        top:80px;
+        @include landscape{
+            left:80px;
+            top:8px;
+            flex-direction: row;  
+        }
+      }
+      @include large{
+        left:80px;
+        top:8px;
+      }
     button{
         width: 40px;
         height: 40px;
@@ -184,7 +209,7 @@
         border: none;
         font-family: 'Permanent Marker', cursive;
         color: white;
-        border-radius:50%;     
+        border-radius:50%;         
         &:hover{
             background-color:#002c77;
         }
@@ -193,6 +218,14 @@
             border: solid #001230;
              
         }
+        @include medium{
+            width: 60px;
+            height: 60px;
+            margin-bottom: 5px;
+            font-size: 20px;
+            @include landscape{
+                margin-left: 5px;   
+            }
+          }
     }
-
 }
