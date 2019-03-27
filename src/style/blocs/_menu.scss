@@ -218,6 +218,10 @@
             border: solid #001230;
              
         }
+        a{
+          text-decoration: none;
+          color: white;
+        }
         @include medium{
             width: 60px;
             height: 60px;
